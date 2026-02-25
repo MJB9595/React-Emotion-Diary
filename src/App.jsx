@@ -71,7 +71,7 @@ function App() {
 
 
     if(!storedData){
-      localStorage.getItem('diary',JSON.stringify([]))
+      localStorage.setItem('diary',JSON.stringify([]))
       setIsDataLoaded(false)
 
       return

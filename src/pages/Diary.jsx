@@ -10,14 +10,17 @@ import useTitle from '../hooks/useTitle'
 const Diary = () => {
 
     const nav = useNavigate()
-    const id = useParams()
+    const {id} = useParams()
 
     const curDiaryItem = useDiary(id)
     
     useTitle(`${id}번의 일기 보기`)
 
+    if (!curDiaryItem) {
+        return <div>로딩중입니다...</div>
+    }
     const {createdDate, emotionId, content} = curDiaryItem
-    const title = getStringedDate(new Date())
+    const title = getStringedDate(new Date(createdDate))
     
   return (
     <div>
@@ -26,14 +29,14 @@ const Diary = () => {
         text={'뒤로가기'}
         onClick={()=>nav(-1)}
       />}
-      title={'yyyy-mm-dd의 기록'}
+      title={`${title}의 기록`}
       rightChild={<Button 
         text={'수정하기'} 
         type={'POSITIVE'}
         onClick={()=>nav(`/edit/${id}`)}
       />}
       />
-      <Viewer/>
+      <Viewer content={content} emotionId={emotionId}/>
     </div>
   )
 }
