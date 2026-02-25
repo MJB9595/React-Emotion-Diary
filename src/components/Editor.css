@@ -1,0 +1,29 @@
+.Editor section{
+    margin-bottom: 40px;
+}
+.Editor  h4{
+    font-size: 22px;
+}
+.Editor section input,
+.Editor section textarea{
+    background-color: #eee;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.Editor section textarea{
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 200px;
+}
+.button-section {
+    display: flex;
+    justify-content: space-between;
+}
+.emotion-section{
+    display: flex;
+    gap:5px;
+    align-items: center;
+}

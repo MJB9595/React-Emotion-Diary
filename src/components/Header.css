@@ -1,0 +1,9 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    padding:20px 0
+}
+.header_center {
+    font-size: 25px;
+    text-transform: capitalize;
+}
